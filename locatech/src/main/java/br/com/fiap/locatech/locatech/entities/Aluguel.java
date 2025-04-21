@@ -14,8 +14,8 @@ import java.time.LocalDate;
 public class Aluguel {
 
     private Long id;
-    private Long idPEssoa;
-    private Long idVeiculo;
+    private Long pessoaId;
+    private Long veiculoId;
     private String veiculoModelo;
 
     private String pessoaCpf;
