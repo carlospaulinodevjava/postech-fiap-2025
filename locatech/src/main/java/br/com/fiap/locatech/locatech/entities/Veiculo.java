@@ -24,6 +24,6 @@ public class Veiculo {
 
     private String cor;
 
-    private BigDecimal valor;
+    private BigDecimal valorDiaria;
 
 }
