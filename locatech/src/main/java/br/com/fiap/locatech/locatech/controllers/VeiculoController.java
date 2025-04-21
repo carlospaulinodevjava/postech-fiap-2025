@@ -40,4 +40,32 @@ public class VeiculoController {
         return ResponseEntity.ok(veiculo);
     }
 
+    @PostMapping
+    public ResponseEntity<Void> saveVeiculo(
+            @RequestBody Veiculo veiculo){
+        logger.info("POST -> /veiculos");
+        this.veiculoService.saveVeiculo(veiculo);
+        return ResponseEntity.status(201).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateVeiculo(
+            @PathVariable("id") Long id,
+            @RequestBody Veiculo veiculo
+    ){
+        logger.info("PUT -> /veiculos/" + id);
+        this.veiculoService.updateVeiculo(veiculo, id);
+        return ResponseEntity.status(201).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteVeiculo(
+            @PathVariable("id") Long id
+    ){
+        logger.info("DELETE -> /veiculos/" + id);
+        this.veiculoService.deleteVeiculo(id);
+        return ResponseEntity.ok().build();
+    }
+
+
 }
